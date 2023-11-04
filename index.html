@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
+        <title>Library</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <h1>library</h1>
+            <form>
+                <div class="form-control">
+                    <label for="book-title">Book Title</label>
+                    <input id="book-title" type="text" autocomplete="off" spellcheck="false" required>
+                    <p class="error"></p>
+                </div>
+
+                <div class="form-control">
+                    <label for="book-author">Author</label>
+                    <input id="book-author" type="text" autocomplete="off" spellcheck="false" required>
+                    <p class="error"></p>
+                </div>
+
+                <div class="form-control">
+                    <label for="book-pages">Pages</label>
+                    <input id="book-pages" type="number" min="1" max="100000" required>
+                    <p class="error"></p>
+                </div>
+
+                <div class="form-control">
+                    <input id="read-status" name="status" type="checkbox" value="true">
+                    <span class="checkmark"></span>
+                    <label style="display: inline-block" for="read-status">I have read this book.</label>
+                    <p class="error"></p>
+                </div>
+
+                <button type="button" id="addBook" class="add-book">Add Book</button>
+            </form>
+            <div class="footer">
+                Made By <a href="https://www.github.com/sh4dman23">sh4dman23</a>
+            </div>
+        </div>
+        <main>
+            <div class="top-count">
+                <div id="total" class="count">
+                    <h4>Total Books</h4>
+                    <span>2</span>
+                </div>
+                <div id="read" class="count">
+                    <h4>Books Read</h4>
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="main-container">
+
+                <div class="book-list">
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
