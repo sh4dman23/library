@@ -172,30 +172,34 @@ a {
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
     word-break: normal;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto) minmax(15px, auto) 1fr;
 }
 
 .book span + span {
     margin-top: 0.2rem;
 }
 
+.book .title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
 .book .buttons {
-    grid-row: -1 / span 1;
     align-self: end;
     display: grid;
     align-items: end;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .book button {
     width: 100%;
     padding: 1rem;
-    /* margin-top: 1rem; */
     font-size: 1.1rem;
     font-weight: 700;
 
@@ -217,10 +221,4 @@ a {
 
 .book button.read-toggle.read:hover {
     background-color: #030712;
-}
-
-.book .title {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
 }

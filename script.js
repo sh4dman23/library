@@ -177,8 +177,11 @@ function addBookCard(bookIndex) {
     bookTitle.textContent = userLibrary[bookIndex].title;
 
     const bookAuthor = createCardPart('Author: ', userLibrary[bookIndex].author);
-
     const bookPages = createCardPart('Number of Pages: ', userLibrary[bookIndex].pages);
+    const infoDiv = document.createElement('div');
+    infoDiv.classList.add('info');
+    infoDiv.appendChild(bookAuthor);
+    infoDiv.appendChild(bookPages)
 
     const bookStatus = document.createElement('button');
     bookStatus.classList.add('read-toggle');
@@ -207,11 +210,11 @@ function addBookCard(bookIndex) {
 }
 
 function createCardPart(headerContent, mainContent) {
-    const span = document.createElement('span');
+    const div = document.createElement('div');
     const header = document.createElement('h4');
     header.textContent = headerContent;
-    span.appendChild(header);
+    div.appendChild(header);
     const mainContentText = document.createTextNode(mainContent);
-    span.appendChild(mainContentText);
-    return span;
+    div.appendChild(mainContentText);
+    return div;
 }
