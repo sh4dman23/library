@@ -1,5 +1,7 @@
 const bookList = document.querySelector('.book-list');
+const addBookForm = document.querySelector('#add-book-form');
 const addButton = document.querySelector('#addBook');
+const resetButton = document.querySelector('#resetForm');
 const counters = document.querySelectorAll('#total, #read');
 
 let userLibrary = [
@@ -80,7 +82,7 @@ function updateCounters() {
 }
 
 // Add books
-addButton.addEventListener('click', event => {
+addButton.addEventListener('click', () => {
     if (!checkForm()) {
         return;
     }
@@ -92,8 +94,10 @@ addButton.addEventListener('click', event => {
 
     addBookToLibrary(title.value, author.value, pages.value, readStatus.checked === true ? 'read' : 'not read');
 
-    document.querySelector('#add-book-form').reset();
+    resetForm();
 });
+
+resetButton.addEventListener('click', resetForm);
 
 document.querySelectorAll('input[type="text"], input[type="number"]').forEach(input => {
     input.addEventListener('keyup', () => {
@@ -101,6 +105,10 @@ document.querySelectorAll('input[type="text"], input[type="number"]').forEach(in
     });
 });
 
+function resetForm() {
+    addBookForm.reset();
+    document.querySelectorAll('p.error').forEach(p => p.innerHTML = '');
+}
 
 // Checks the whole forms
 function checkForm() {
