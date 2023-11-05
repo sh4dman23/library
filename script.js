@@ -17,7 +17,7 @@ let userLibrary = [
     )
 ];
 
-makeList(); /* remove */
+makeList();
 
 // Book object
 function Book(title, author, pages, status='not read') {
