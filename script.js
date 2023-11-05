@@ -92,10 +92,7 @@ addButton.addEventListener('click', event => {
 
     addBookToLibrary(title.value, author.value, pages.value, readStatus.checked === true ? 'read' : 'not read');
 
-    title.value = '';
-    author.value = '';
-    pages.value = '';
-    readStatus.checked = false;
+    document.querySelector('#add-book-form').reset();
 });
 
 document.querySelectorAll('input[type="text"], input[type="number"]').forEach(input => {
